@@ -99,14 +99,11 @@ export default function VideoSection() {
       <Container>
         <ScrollReveal>
           <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/20 text-blue-300 border border-blue-400/30 mb-4">
-              <Sparkles className="w-3.5 h-3.5" /> Video First Marketplace
-            </span>
             <h2 className="text-heading-2 md:text-heading-1 lg:text-display font-bold text-white text-balance">
-              See the work before you book.
+              Work, Post, Boost.
             </h2>
             <p className="mt-4 text-body-lg text-slate-300 text-balance">
-              No generic stock photos. Watch short-form video reels of verified artisans, technicians, and creatives demonstrating their craft in real life.
+              Showcase your craft through authentic video reels. Post your projects, gain visibility, and boost your business to reach more customers in your neighborhood.
             </p>
           </div>
         </ScrollReveal>
@@ -120,11 +117,10 @@ export default function VideoSection() {
                 <motion.div
                   whileHover={{ y: -8 }}
                   onClick={() => setActiveVideo(video)}
-                  className={`group relative rounded-2xl overflow-hidden cursor-pointer aspect-[9/16] shadow-xl border transition-all duration-300 ${
-                    isActive
-                      ? 'border-primary ring-2 ring-primary/50 scale-[1.02]'
-                      : 'border-slate-700/80 hover:border-slate-500'
-                  }`}
+                  className={`group relative rounded-2xl overflow-hidden cursor-pointer aspect-[9/16] shadow-xl border transition-all duration-300 ${isActive
+                    ? 'border-primary ring-2 ring-primary/50 scale-[1.02]'
+                    : 'border-slate-700/80 hover:border-slate-500'
+                    }`}
                 >
                   {/* Background Mock Video Gradient & Visual Details */}
                   <div className={`absolute inset-0 bg-gradient-to-b ${video.gradient} opacity-90 group-hover:opacity-100 transition-opacity`} />
@@ -134,9 +130,7 @@ export default function VideoSection() {
 
                   {/* Top Bar on Reel */}
                   <div className="absolute top-3 inset-x-3 flex items-center justify-between z-10">
-                    <span className="text-[10px] font-bold uppercase tracking-wider bg-black/40 backdrop-blur-md px-2 py-0.5 rounded text-white/90 border border-white/10">
-                      {video.badge}
-                    </span>
+                    <div />
                     <span className="text-[11px] font-mono text-white/80 bg-black/40 px-1.5 py-0.5 rounded">
                       {video.duration}
                     </span>
@@ -159,9 +153,7 @@ export default function VideoSection() {
                     </h4>
 
                     <div className="flex items-center justify-between mt-2.5 pt-2 border-t border-white/15 text-[11px] text-slate-300">
-                      <span className="font-medium text-white truncate max-w-[100px]">
-                        {video.creator}
-                      </span>
+                      <div className="w-16 h-2 bg-white/20 rounded-full" />
                       <div className="flex items-center gap-2">
                         <span className="flex items-center gap-0.5 text-rose-400">
                           <Heart className="w-3 h-3 fill-rose-400" /> {video.likes}
@@ -184,12 +176,10 @@ export default function VideoSection() {
             <Button variant="primary" size="lg" href="/advertising" className="shadow-glow">
               Promote Your Skills with Video Ads <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
-            <p className="text-xs text-slate-400 mt-3">
-              Providers can run targeted geo-fenced video campaigns starting from just \$5.
-            </p>
           </div>
         </ScrollReveal>
       </Container>
     </section>
   );
 }
+

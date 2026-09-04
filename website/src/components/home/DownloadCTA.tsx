@@ -42,10 +42,6 @@ export default function DownloadCTA({
       <Container className="relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <ScrollReveal>
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-500/20 text-blue-300 border border-blue-400/30 mb-6">
-              <Sparkles className="w-3.5 h-3.5" /> Early Access & Launch Beta
-            </span>
-
             <h2 className="text-heading-2 md:text-heading-1 lg:text-display font-extrabold text-white leading-tight text-balance">
               {title}
             </h2>

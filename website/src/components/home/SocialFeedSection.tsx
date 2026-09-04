@@ -87,10 +87,10 @@ export default function SocialFeedSection() {
       posts.map((p) =>
         p.id === id
           ? {
-              ...p,
-              isLiked: !p.isLiked,
-              likes: p.isLiked ? p.likes - 1 : p.likes + 1,
-            }
+            ...p,
+            isLiked: !p.isLiked,
+            likes: p.isLiked ? p.likes - 1 : p.likes + 1,
+          }
           : p
       )
     );
@@ -101,7 +101,6 @@ export default function SocialFeedSection() {
       <Container>
         <ScrollReveal>
           <SectionHeading
-            tag="Professional Social Feed"
             title="Discover what professionals can really do."
             subtitle="WeLink is more than a directory. Explore authentic projects, live transformations, before/after stories, and verified client testimonials before you hire."
           />
@@ -116,25 +115,33 @@ export default function SocialFeedSection() {
                 <div className="p-5 flex items-center justify-between border-b border-slate-100">
                   <div className="flex items-center gap-3">
                     <div
-                      className={`w-11 h-11 rounded-full bg-gradient-to-tr ${post.avatarBg} flex items-center justify-center font-bold text-white text-sm shadow-sm`}
+                      className={`w-11 h-11 rounded-full bg-slate-300 flex items-center justify-center`}
                     >
-                      {post.avatar}
                     </div>
                     <div>
                       <div className="flex items-center gap-1.5">
-                        <h4 className="font-semibold text-slate-900 text-sm">{post.author}</h4>
+                        <div className="w-24 h-3 bg-slate-200 rounded-full" />
                         {post.verified && <ShieldCheck className="w-4 h-4 text-primary" />}
                       </div>
-                      <p className="text-xs text-slate-500">{post.profession}</p>
+                      <div className="w-16 h-2 bg-slate-100 rounded-full mt-2" />
                     </div>
                   </div>
                   <span className="text-[11px] text-slate-400 font-medium">{post.time}</span>
                 </div>
 
                 {/* Post Visual Media Simulation */}
-                <div className={`relative h-64 bg-gradient-to-br ${post.gradient} p-4 flex flex-col justify-between overflow-hidden group cursor-pointer`}>
+                <div className={`relative h-64 bg-slate-200 p-4 flex flex-col justify-between overflow-hidden group cursor-pointer`}>
+                  {post.id === 1 && (
+                    <img src="/dinning-table.jpg" alt="Dining Table" className="absolute inset-0 w-full h-full object-cover" />
+                  )}
+                  {post.id === 2 && (
+                    <img src="/bridal-glam.jpg" alt="Bridal Glam" className="absolute inset-0 w-full h-full object-cover" />
+                  )}
+                  {post.id === 3 && (
+                    <img src="/car.jpg" alt="Car Repair" className="absolute inset-0 w-full h-full object-cover" />
+                  )}
                   {/* Category / Tag Pill */}
-                  <div className="flex items-center justify-between z-10">
+                  <div className="flex items-center justify-between z-10 opacity-0">
                     <span className="bg-black/50 backdrop-blur-md text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
                       {post.tag}
                     </span>
@@ -143,50 +150,8 @@ export default function SocialFeedSection() {
                     </span>
                   </div>
 
-                  {/* Inner Creative Graphic Elements */}
-                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none opacity-20">
-                    <div className="w-40 h-40 rounded-full border-4 border-dashed border-white animate-spin-slow" />
-                  </div>
-
-                  {post.visualType === 'before-after' && (
-                    <div className="relative z-10 grid grid-cols-2 gap-2 my-auto">
-                      <div className="bg-black/40 backdrop-blur-sm border border-white/10 rounded-xl p-3 text-center">
-                        <span className="text-[10px] uppercase font-bold text-amber-300 block mb-1">Before</span>
-                        <div className="h-16 rounded bg-amber-950/60 border border-amber-500/30 flex items-center justify-center text-amber-200/80 text-xs font-mono">
-                          Raw Slabs
-                        </div>
-                      </div>
-                      <div className="bg-black/40 backdrop-blur-sm border border-emerald-400/30 rounded-xl p-3 text-center">
-                        <span className="text-[10px] uppercase font-bold text-emerald-300 block mb-1">After</span>
-                        <div className="h-16 rounded bg-emerald-950/60 border border-emerald-500/40 flex items-center justify-center text-emerald-200 text-xs font-mono font-bold">
-                          Finished ✓
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {post.visualType === 'video-thumb' && (
-                    <div className="relative z-10 flex flex-col items-center justify-center my-auto">
-                      <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform">
-                        <Play className="w-6 h-6 text-white fill-white ml-0.5" />
-                      </div>
-                      <span className="text-white text-xs font-semibold mt-2 drop-shadow">0:45 Watch Transformation</span>
-                    </div>
-                  )}
-
-                  {post.visualType === 'card-showcase' && (
-                    <div className="relative z-10 my-auto bg-black/40 backdrop-blur-md border border-white/10 rounded-xl p-3.5">
-                      <div className="flex items-center gap-2 text-blue-300 text-xs font-semibold mb-1.5">
-                        <Sparkles className="w-4 h-4" /> OBD-II Diagnostics Cleared
-                      </div>
-                      <div className="text-[11px] text-slate-200 font-mono">
-                        Error Code P0700: Repaired & Recalibrated
-                      </div>
-                    </div>
-                  )}
-
                   {/* Visual Footer watermark */}
-                  <div className="flex items-center justify-between text-white/70 text-xs z-10">
+                  <div className="flex items-center justify-between text-white/70 text-xs z-10 opacity-0">
                     <span className="flex items-center gap-1">
                       <Camera className="w-3.5 h-3.5" /> Verified Project Media
                     </span>
@@ -203,9 +168,8 @@ export default function SocialFeedSection() {
                     <div className="flex items-center gap-4">
                       <button
                         onClick={() => toggleLike(post.id)}
-                        className={`flex items-center gap-1.5 text-xs font-semibold transition-colors ${
-                          post.isLiked ? 'text-rose-600' : 'text-slate-600 hover:text-rose-600'
-                        }`}
+                        className={`flex items-center gap-1.5 text-xs font-semibold transition-colors ${post.isLiked ? 'text-rose-600' : 'text-slate-600 hover:text-rose-600'
+                          }`}
                       >
                         <Heart className={`w-4 h-4 ${post.isLiked ? 'fill-rose-600' : ''}`} />
                         <span>{post.likes}</span>

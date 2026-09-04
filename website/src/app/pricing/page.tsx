@@ -9,13 +9,6 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import DownloadCTA from '@/components/home/DownloadCTA';
 import {
   Check,
-  Sparkles,
-  ShieldCheck,
-  HelpCircle,
-  Percent,
-  Wallet,
-  Building2,
-  Lock,
 } from 'lucide-react';
 import { PRICING_PLANS, REVENUE_STREAMS } from '@/lib/constants';
 
@@ -28,9 +21,6 @@ export default function PricingPage() {
       <section className="relative py-16 md:py-20 bg-gradient-to-b from-primary-50/60 via-background to-background">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 mb-6">
-              <Sparkles className="w-3.5 h-3.5" /> Fair & Transparent Pricing
-            </span>
             <h1 className="text-display md:text-display-xl font-extrabold text-slate-900 leading-tight text-balance">
               Simple plans. No hidden surprises.
             </h1>
@@ -42,21 +32,19 @@ export default function PricingPage() {
             <div className="mt-10 inline-flex p-1.5 rounded-2xl bg-slate-200/80 border border-slate-300/60">
               <button
                 onClick={() => setActiveTab('providers')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                  activeTab === 'providers'
-                    ? 'bg-white text-slate-900 shadow-md'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeTab === 'providers'
+                  ? 'bg-white text-slate-900 shadow-md'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 For Service Providers
               </button>
               <button
                 onClick={() => setActiveTab('customers')}
-                className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all ${
-                  activeTab === 'customers'
-                    ? 'bg-white text-slate-900 shadow-md'
-                    : 'text-slate-600 hover:text-slate-900'
-                }`}
+                className={`px-6 py-2.5 rounded-xl text-sm font-semibold transition-all ${activeTab === 'customers'
+                  ? 'bg-white text-slate-900 shadow-md'
+                  : 'text-slate-600 hover:text-slate-900'
+                  }`}
               >
                 For Customers
               </button>
@@ -85,9 +73,6 @@ export default function PricingPage() {
                 ))}
               </div>
 
-              <div className="mt-10 text-center text-xs text-slate-500 max-w-xl mx-auto">
-                * Note: Pricing tiers are placeholder figures designed for regional launch markets. Final rates may vary by operating currency and local country regulations.
-              </div>
             </div>
           ) : (
             <div className="max-w-3xl mx-auto bg-white rounded-3xl p-8 md:p-12 border border-slate-200 shadow-large text-center">
@@ -129,7 +114,6 @@ export default function PricingPage() {
         <Container>
           <ScrollReveal>
             <SectionHeading
-              tag="Our Business Model"
               title="A sustainable ecosystem built on shared success."
               subtitle="We believe in total transparency regarding how WeLink operates and generates sustainable revenue."
             />
@@ -148,15 +132,6 @@ export default function PricingPage() {
             ))}
           </div>
 
-          <div className="mt-12 p-6 rounded-2xl bg-blue-50/70 border border-blue-200/60 max-w-4xl mx-auto flex items-start gap-4">
-            <ShieldCheck className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-            <div>
-              <h4 className="text-sm font-bold text-slate-900">Why this model works for Africa</h4>
-              <p className="text-xs text-slate-600 mt-1 leading-relaxed">
-                By allowing artisans and small businesses to join and get discovered for free, we remove all entry barriers to the digital economy. WeLink only earns when value is created—through successful bookings, optional premium growth subscriptions, and high-ROI promotional video advertising.
-              </p>
-            </div>
-          </div>
         </Container>
       </section>
 

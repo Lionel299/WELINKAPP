@@ -45,9 +45,6 @@ export default function AboutPage() {
       <section className="relative py-16 md:py-24 bg-gradient-to-b from-primary-50/70 via-background to-background overflow-hidden">
         <Container>
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 mb-6">
-              <Compass className="w-3.5 h-3.5" /> Our Mission & Vision
-            </span>
             <h1 className="text-display md:text-display-xl font-extrabold text-slate-900 leading-tight text-balance">
               Connecting local talent with local demand.
             </h1>
@@ -104,7 +101,6 @@ export default function AboutPage() {
         <Container>
           <ScrollReveal>
             <SectionHeading
-              tag="Our Pillars"
               title="The principles that guide every feature we ship."
               subtitle="We build with empathy for the local context and an uncompromising commitment to engineering excellence."
             />

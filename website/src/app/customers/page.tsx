@@ -3,7 +3,6 @@
 import Container from '@/components/ui/Container';
 import SectionHeading from '@/components/ui/SectionHeading';
 import Button from '@/components/ui/Button';
-import Card from '@/components/ui/Card';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import DownloadCTA from '@/components/home/DownloadCTA';
 import {
@@ -84,9 +83,6 @@ export default function CustomersPage() {
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none" />
         <Container className="relative z-10">
           <div className="max-w-3xl mx-auto text-center">
-            <span className="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wider bg-primary/10 text-primary border border-primary/20 mb-6">
-              <Sparkles className="w-3.5 h-3.5" /> For Homeowners & Everyday Customers
-            </span>
             <h1 className="text-display md:text-display-xl font-extrabold text-slate-900 leading-tight text-balance">
               Find the right professional with confidence.
             </h1>
@@ -110,7 +106,6 @@ export default function CustomersPage() {
         <Container>
           <ScrollReveal>
             <SectionHeading
-              tag="The Customer Journey"
               title="From discovering talent to a job well done."
               subtitle="We designed every step of the WeLink customer experience to be frictionless, transparent, and completely risk-free."
             />
@@ -150,7 +145,6 @@ export default function CustomersPage() {
         <Container>
           <ScrollReveal>
             <SectionHeading
-              tag="Customer Benefits"
               title="Why thousands choose WeLink."
               subtitle="Everything you need to get quality services done quickly, affordably, and safely."
             />
@@ -183,9 +177,6 @@ export default function CustomersPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <ScrollReveal>
-                <span className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2 block">
-                  Seamless Mobile Experience
-                </span>
                 <h2 className="text-heading-2 md:text-heading-1 font-bold text-white leading-tight">
                   Your entire neighborhood&apos;s best talent right in your pocket.
                 </h2>
@@ -202,10 +193,6 @@ export default function CustomersPage() {
                     <Lock className="w-5 h-5 text-emerald-400 flex-shrink-0" />
                     <span>100% Escrow protected transactions with dispute resolution</span>
                   </div>
-                  <div className="flex items-center gap-3 text-sm text-slate-200">
-                    <Star className="w-5 h-5 text-emerald-400 flex-shrink-0" />
-                    <span>Real video proof before you spend a single cent</span>
-                  </div>
                 </div>
 
                 <div className="mt-8">
@@ -219,61 +206,12 @@ export default function CustomersPage() {
             {/* Visual Phone Mockup */}
             <div className="flex justify-center">
               <ScrollReveal direction="left">
-                <div className="w-full max-w-sm rounded-[36px] bg-slate-950 p-4 shadow-2xl ring-1 ring-slate-800">
-                  <div className="rounded-[28px] bg-slate-900 p-5 pt-7 text-white">
-                    <div className="flex items-center justify-between pb-3 border-b border-slate-800">
-                      <div>
-                        <span className="text-[10px] text-slate-400">Current Location</span>
-                        <h4 className="text-xs font-bold text-white flex items-center gap-1">
-                          <MapPin className="w-3.5 h-3.5 text-primary" /> Osu, Accra
-                        </h4>
-                      </div>
-                      <div className="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center text-xs font-bold text-blue-400">
-                        SK
-                      </div>
-                    </div>
-
-                    <div className="my-4 p-3 bg-slate-800/80 rounded-xl border border-slate-700">
-                      <span className="text-[10px] uppercase font-bold text-blue-300">Active Service Request</span>
-                      <h5 className="text-xs font-bold text-white mt-1">Air Conditioner Servicing</h5>
-                      <div className="flex items-center justify-between text-[11px] text-emerald-400 mt-2 font-semibold">
-                        <span>Technician En Route (1.1 km away)</span>
-                        <span>ETA 8 min</span>
-                      </div>
-                    </div>
-
-                    <div className="space-y-2">
-                      <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block">
-                        Nearby Available Pros
-                      </span>
-                      <div className="p-2.5 bg-slate-800/50 rounded-xl flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-xs">
-                            KM
-                          </div>
-                          <div>
-                            <span className="text-xs font-bold text-white block">Kofi Mensah</span>
-                            <span className="text-[10px] text-slate-400">Electrician • 4.9 ★</span>
-                          </div>
-                        </div>
-                        <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-                          Available
-                        </span>
-                      </div>
-                      <div className="p-2.5 bg-slate-800/50 rounded-xl flex items-center justify-between">
-                        <div className="flex items-center gap-2.5">
-                          <div className="w-8 h-8 rounded-lg bg-pink-600 flex items-center justify-center font-bold text-xs">
-                            AD
-                          </div>
-                          <div>
-                            <span className="text-xs font-bold text-white block">Amina Diallo</span>
-                            <span className="text-[10px] text-slate-400">Hair Stylist • 5.0 ★</span>
-                          </div>
-                        </div>
-                        <span className="text-[10px] font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded">
-                          Available
-                        </span>
-                      </div>
+                <div className="relative w-full max-w-[280px] rounded-[3rem] bg-slate-950 p-3 shadow-2xl ring-1 ring-slate-800">
+                  <div className="relative flex aspect-[9/19] items-center justify-center overflow-hidden rounded-[2.25rem] border border-slate-700 bg-slate-900">
+                    <div className="absolute top-0 left-1/2 z-10 h-6 w-32 -translate-x-1/2 rounded-b-3xl bg-slate-950" />
+                    <div className="relative flex items-center justify-center">
+                      <div className="absolute bottom-0 h-3 w-16 translate-y-5 rounded-[50%] bg-blue-950/80 blur-md" />
+                      <MapPin className="relative z-10 h-20 w-20 fill-blue-600 text-blue-600 drop-shadow-[0_14px_6px_rgba(0,0,0,0.55)]" strokeWidth={1.5} />
                     </div>
                   </div>
                 </div>

@@ -25,8 +25,6 @@ export const NAV_LINKS = {
     { label: 'Advertising', href: '/advertising', description: 'Promote your services' },
   ],
   resources: [
-    { label: 'Blog', href: '/resources', description: 'Latest articles and updates' },
-    { label: 'Guides', href: '/resources', description: 'How-to guides and tips' },
     { label: 'FAQ', href: '/faq', description: 'Frequently asked questions' },
     { label: 'Help Center', href: '/contact', description: 'Get support' },
   ],
@@ -209,7 +207,6 @@ export const VIDEO_EXAMPLES = [
 export const CUSTOMER_BENEFITS = [
   { title: 'Discover Nearby Professionals', description: 'Find verified providers close to you, ready to help.', icon: 'MapPin' },
   { title: 'Compare Providers', description: 'View profiles, portfolios, and reviews side by side.', icon: 'Users' },
-  { title: 'Check Reviews', description: 'Read authentic feedback from real customers.', icon: 'Star' },
   { title: 'View Portfolios', description: 'See actual work before making a decision.', icon: 'Camera' },
   { title: 'Communicate Directly', description: 'Message providers through secure in-app chat.', icon: 'MessageSquare' },
   { title: 'Request Quotations', description: 'Get clear pricing before committing.', icon: 'CreditCard' },
@@ -224,17 +221,18 @@ export const CUSTOMER_BENEFITS = [
 // ===========================
 
 export const PROVIDER_BENEFITS = [
-  { title: 'Create a Professional Profile', description: 'Showcase your skills, services, and experience.' },
-  { title: 'Showcase Your Work', description: 'Build a visual portfolio that speaks for itself.' },
-  { title: 'Get Discovered Locally', description: 'Appear on the map and in search results near you.' },
-  { title: 'Receive Service Requests', description: 'Get notified when customers need your services.' },
-  { title: 'Communicate with Customers', description: 'Chat directly through secure messaging.' },
-  { title: 'Manage Bookings', description: 'Organize your schedule with built-in tools.' },
-  { title: 'Receive Payments', description: 'Get paid through supported payment methods.' },
-  { title: 'Build Your Reputation', description: 'Collect reviews and build trust over time.' },
-  { title: 'Publish Photos & Videos', description: 'Show your best work to attract customers.' },
-  { title: 'Promote Services', description: 'Use advertising tools to reach more people.' },
-  { title: 'Grow Your Business', description: 'Access analytics and tools to scale.' },
+  { title: 'Create a Professional Profile', description: 'Showcase your skills, services, and experience.', icon: 'UserCheck' },
+  { title: 'Showcase Your Work', description: 'Build a visual portfolio that speaks for itself.', icon: 'Camera' },
+  { title: 'Get Discovered Locally', description: 'Appear on the map and in search results near you.', icon: 'MapPin' },
+  { title: 'Receive Service Requests', description: 'Get notified when customers need your services.', icon: 'Inbox' },
+  { title: 'Communicate with Customers', description: 'Chat directly through secure messaging.', icon: 'MessageSquare' },
+  { title: 'Manage Bookings', description: 'Organize your schedule with built-in tools.', icon: 'Calendar' },
+  { title: 'Receive Payments', description: 'Get paid through supported payment methods.', icon: 'Wallet' },
+  { title: 'Build Your Reputation', description: 'Collect reviews and build trust over time.', icon: 'Star' },
+  { title: 'Publish Photos & Videos', description: 'Show your best work to attract customers.', icon: 'Video' },
+  { title: 'Promote Services', description: 'Use advertising tools to reach more people.', icon: 'Megaphone' },
+  { title: 'Grow Your Business', description: 'Access analytics and tools to scale.', icon: 'TrendingUp' },
+  { title: 'Protect Your Business', description: 'Keep your work and customer relationships secure.', icon: 'ShieldCheck' },
 ];
 
 // ===========================
@@ -253,6 +251,7 @@ export const PROVIDER_TOOLS = [
   { title: 'Analytics', description: 'Understand your performance', icon: 'BarChart3' },
   { title: 'Advertising', description: 'Promote your services', icon: 'Target' },
   { title: 'Premium Membership', description: 'Unlock advanced features', icon: 'Crown' },
+  { title: 'Invoices & Receipts', description: 'Keep every transaction organized', icon: 'Receipt' },
 ];
 
 // ===========================
@@ -306,7 +305,7 @@ export const PRICING_PLANS = [
       'Calendar management',
       'Promotions (limited)',
     ],
-    highlighted: true,
+    highlighted: false,
     cta: 'Go Pro',
   },
   {
@@ -417,47 +416,6 @@ export const FAQ_ITEMS = [
 ];
 
 // ===========================
-// Resources/Blog
-// ===========================
-
-export const RESOURCE_ARTICLES = [
-  {
-    title: 'How to Choose the Right Professional',
-    excerpt: 'A step-by-step guide to finding and evaluating service providers on WeLink.',
-    category: 'Customer Guides',
-    readTime: '5 min read',
-  },
-  {
-    title: 'How to Create a Great Provider Profile',
-    excerpt: 'Tips and best practices for building a profile that attracts customers.',
-    category: 'Provider Tips',
-    readTime: '7 min read',
-  },
-  {
-    title: 'How to Get More Customers on WeLink',
-    excerpt: 'Strategies to increase your visibility and win more service requests.',
-    category: 'Business Resources',
-    readTime: '6 min read',
-  },
-  {
-    title: 'How to Promote Your Services on WeLink',
-    excerpt: 'Learn how to use WeLink\'s advertising tools to reach more customers.',
-    category: 'Business Resources',
-    readTime: '8 min read',
-  },
-];
-
-export const RESOURCE_CATEGORIES = [
-  'All',
-  'Blog',
-  'Guides',
-  'Provider Tips',
-  'Customer Guides',
-  'Safety',
-  'Business Resources',
-];
-
-// ===========================
 // Contact Categories
 // ===========================
 
@@ -487,7 +445,6 @@ export const FOOTER_LINKS = {
   customers: [
     { label: 'Find Professionals', href: '/customers' },
     { label: 'Safety', href: '/#trust' },
-    { label: 'FAQ', href: '/faq' },
   ],
   providers: [
     { label: 'Become a Provider', href: '/providers' },
@@ -496,8 +453,7 @@ export const FOOTER_LINKS = {
     { label: 'Pricing', href: '/pricing' },
   ],
   resources: [
-    { label: 'Blog', href: '/resources' },
-    { label: 'Guides', href: '/resources' },
+    { label: 'FAQ', href: '/faq' },
     { label: 'Help Center', href: '/contact' },
   ],
   legal: [

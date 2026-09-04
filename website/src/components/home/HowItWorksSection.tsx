@@ -22,7 +22,6 @@ export default function HowItWorksSection() {
     <section className="py-20 md:py-32 bg-slate-50 overflow-hidden">
       <Container>
         <SectionHeading
-          tag="How It Works"
           title="Simple. Fast. Reliable."
           subtitle="A seamless end-to-end experience designed to give you peace of mind."
           centered={true}
@@ -51,11 +50,11 @@ export default function HowItWorksSection() {
                   <ScrollReveal direction={isEven ? 'left' : 'right'} delay={0.2}>
                     <div className="relative max-w-sm mx-auto">
                       {/* Phone Frame */}
-                      <div className="bg-gray-900 rounded-[3rem] p-3 shadow-2xl relative z-10 border border-gray-800 mx-auto w-[280px]">
+                      <div className="bg-gray-900 rounded-[3rem] p-3 shadow-2xl relative z-10 border border-gray-800 mx-auto w-full max-w-[280px]">
                         <div className="bg-white rounded-[2.25rem] overflow-hidden aspect-[9/19] relative flex flex-col border border-gray-200">
                           {/* Notch */}
                           <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-gray-900 rounded-b-3xl z-20"></div>
-                          
+
                           {/* App Content based on index */}
                           <div className="flex-1 bg-gray-50 flex flex-col pt-12 relative z-10">
                             {index === 0 && <DiscoverMockup />}
@@ -66,7 +65,7 @@ export default function HowItWorksSection() {
                           </div>
                         </div>
                       </div>
-                      
+
                       {/* Background decorations */}
                       <div className={`absolute top-1/2 -translate-y-1/2 w-64 h-64 rounded-full blur-3xl opacity-20 z-0 ${isEven ? 'bg-blue-400 -left-12' : 'bg-indigo-400 -right-12'}`}></div>
                     </div>
@@ -149,7 +148,7 @@ function BookMockup() {
   return (
     <div className="p-4 flex flex-col h-full bg-white">
       <div className="h-3 w-24 bg-gray-800 rounded mb-6"></div>
-      
+
       <div className="bg-white rounded-xl border border-gray-100 p-4 shadow-sm mb-6">
         <div className="flex justify-between items-center mb-4">
           <div className="h-2.5 w-16 bg-gray-800 rounded"></div>
@@ -159,10 +158,10 @@ function BookMockup() {
           </div>
         </div>
         <div className="grid grid-cols-7 gap-1 mb-2">
-          {[1,2,3,4,5,6,7].map(i => <div key={i} className="h-1 bg-gray-200 rounded"></div>)}
+          {[1, 2, 3, 4, 5, 6, 7].map(i => <div key={i} className="h-1 bg-gray-200 rounded"></div>)}
         </div>
         <div className="grid grid-cols-7 gap-1">
-          {Array.from({length: 28}).map((_, i) => (
+          {Array.from({ length: 28 }).map((_, i) => (
             <div key={i} className={`aspect-square rounded flex items-center justify-center ${i === 15 ? 'bg-blue-600 text-white shadow-sm' : 'bg-gray-50'}`}>
               <div className={`h-1 w-1 rounded-full ${i === 15 ? 'bg-white' : 'bg-gray-300'}`}></div>
             </div>
@@ -205,14 +204,14 @@ function PayMockup() {
           <div className="h-1.5 w-10 bg-gray-800 rounded"></div>
         </div>
       </div>
-      
+
       <div className="space-y-2 mb-4">
         <div className="bg-white p-3 rounded-xl border-2 border-blue-600 shadow-sm flex items-center gap-2 relative">
           <div className="absolute top-0 right-0 w-3 h-3 bg-blue-600 rounded-bl flex items-center justify-center">
             <CheckCircle2 className="w-2 h-2 text-white" />
           </div>
           <div className="w-8 h-5 bg-gray-800 rounded flex items-center justify-center">
-             <div className="h-0.5 w-3 bg-white rounded-full"></div>
+            <div className="h-0.5 w-3 bg-white rounded-full"></div>
           </div>
           <div className="flex-1">
             <div className="h-1.5 w-16 bg-gray-800 rounded mb-1"></div>
@@ -241,9 +240,9 @@ function ReviewMockup() {
       <div className="w-16 h-16 bg-gray-200 rounded-full mb-3 shadow-sm border-2 border-white ring-1 ring-gray-100 mt-4"></div>
       <div className="h-3 w-24 bg-gray-900 rounded mb-2"></div>
       <div className="h-2 w-32 bg-gray-400 rounded mb-6 text-center"></div>
-      
+
       <div className="flex gap-1.5 mb-6">
-        {[1,2,3,4,5].map(i => (
+        {[1, 2, 3, 4, 5].map(i => (
           <Star key={i} className={`w-6 h-6 ${i <= 4 ? 'text-yellow-400 fill-yellow-400' : 'text-gray-200 fill-gray-200'}`} />
         ))}
       </div>

@@ -40,9 +40,7 @@ export default function ProfileMockup() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between -mt-14 mb-4 gap-4">
           {/* Avatar with Verified Ring */}
           <div className="relative">
-            <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-blue-700 to-indigo-900 border-4 border-white shadow-xl flex items-center justify-center text-2xl font-bold text-white">
-              KM
-            </div>
+            <div className="w-24 h-24 rounded-2xl bg-gray-200 border-4 border-white shadow-xl"></div>
             <div className="absolute -bottom-1 -right-1 bg-emerald-500 text-white rounded-full p-1 border-2 border-white shadow">
               <ShieldCheck className="w-4 h-4" />
             </div>
@@ -61,27 +59,25 @@ export default function ProfileMockup() {
         {/* Identity & Main Info */}
         <div>
           <div className="flex items-center gap-2">
-            <h3 className="text-xl font-bold text-slate-900">Kofi Mensah</h3>
+            <div className="h-6 w-32 bg-gray-300 rounded border border-gray-400"></div>
             <span className="inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-50 text-primary border border-blue-200">
               <ShieldCheck className="w-3.5 h-3.5 text-primary" /> Verified Master Pro
             </span>
           </div>
-          <p className="text-sm font-semibold text-slate-600 mt-0.5">
-            Certified Residential & Commercial Electrician
-          </p>
+          <div className="h-4 w-64 bg-gray-200 rounded border border-gray-300 mt-2"></div>
 
           <div className="flex flex-wrap items-center gap-y-2 gap-x-4 mt-3 text-xs text-slate-500">
             <span className="flex items-center gap-1 text-amber-500 font-bold">
-              <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> 4.9 (128 reviews)
+              <Star className="w-4 h-4 fill-amber-400 text-amber-400" /> 4.9
             </span>
             <span className="flex items-center gap-1">
-              <MapPin className="w-3.5 h-3.5 text-slate-400" /> Osu & Airport Residential (15km radius)
+              <MapPin className="w-3.5 h-3.5 text-slate-400" /> <div className="h-3 w-24 bg-gray-200 rounded"></div>
             </span>
             <span className="flex items-center gap-1 text-emerald-600 font-semibold">
-              <Clock className="w-3.5 h-3.5" /> Available Today • 8 AM - 6 PM
+              <Clock className="w-3.5 h-3.5" /> Available Today
             </span>
             <span className="flex items-center gap-1 font-medium text-slate-700">
-              <Award className="w-3.5 h-3.5 text-primary" /> 340+ Completed Jobs
+              <Award className="w-3.5 h-3.5 text-primary" /> <div className="h-3 w-20 bg-gray-200 rounded"></div>
             </span>
           </div>
         </div>
@@ -93,18 +89,18 @@ export default function ProfileMockup() {
           </h4>
           <div className="space-y-2.5">
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
-              <div>
-                <span className="text-sm font-semibold text-slate-900 block">Emergency Fault Diagnostics & Repair</span>
-                <span className="text-xs text-slate-500">Includes 1 hour inspection & minor wiring fix</span>
+              <div className="flex-1">
+                <div className="h-4 w-48 bg-gray-300 rounded border border-gray-400 mb-1"></div>
+                <div className="h-3 w-32 bg-gray-200 rounded border border-gray-300"></div>
               </div>
-              <span className="text-sm font-bold text-primary font-mono">$35.00</span>
+              <div className="h-4 w-16 bg-primary/20 rounded"></div>
             </div>
             <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-center justify-between">
-              <div>
-                <span className="text-sm font-semibold text-slate-900 block">Solar Inverter & Lithium Battery Wiring</span>
-                <span className="text-xs text-slate-500">Full system installation with warranty</span>
+              <div className="flex-1">
+                <div className="h-4 w-56 bg-gray-300 rounded border border-gray-400 mb-1"></div>
+                <div className="h-3 w-40 bg-gray-200 rounded border border-gray-300"></div>
               </div>
-              <span className="text-sm font-bold text-primary font-mono">$180.00</span>
+              <div className="h-4 w-16 bg-primary/20 rounded"></div>
             </div>
           </div>
         </div>
@@ -115,12 +111,12 @@ export default function ProfileMockup() {
             <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400">
               Recent Projects & Video Proof
             </h4>
-            <span className="text-xs font-semibold text-primary">View all 24</span>
+            <span className="text-xs font-semibold text-primary">View all</span>
           </div>
           <div className="grid grid-cols-3 gap-2">
             <div className="aspect-square rounded-xl bg-gradient-to-br from-amber-600 to-slate-900 relative overflow-hidden flex items-center justify-center">
               <span className="text-[10px] text-white font-bold px-2 py-0.5 bg-black/50 rounded absolute top-1.5 left-1.5">
-                Solar Setup
+                Project
               </span>
             </div>
             <div className="aspect-square rounded-xl bg-gradient-to-br from-blue-700 to-indigo-950 relative overflow-hidden flex items-center justify-center">
@@ -131,7 +127,7 @@ export default function ProfileMockup() {
             </div>
             <div className="aspect-square rounded-xl bg-gradient-to-br from-emerald-600 to-slate-900 relative overflow-hidden flex items-center justify-center">
               <span className="text-[10px] text-white font-bold px-2 py-0.5 bg-black/50 rounded absolute top-1.5 left-1.5">
-                Breaker Box
+                Project
               </span>
             </div>
           </div>

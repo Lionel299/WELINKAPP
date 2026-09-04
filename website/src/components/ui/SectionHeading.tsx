@@ -15,11 +15,6 @@ export function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className={`${centered ? 'text-center' : ''} mb-12 md:mb-16 ${className}`}>
-      {tag && (
-        <span className="inline-block mb-4 px-4 py-1.5 text-sm font-semibold text-primary bg-primary-50 rounded-full">
-          {tag}
-        </span>
-      )}
       <h2 className="text-heading-2 md:text-heading-1 lg:text-display text-text-primary text-balance">
         {title}
       </h2>

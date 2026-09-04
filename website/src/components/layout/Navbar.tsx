@@ -2,7 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Globe, Menu } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { ChevronDown, Globe, Menu, Home } from 'lucide-react';
 import Logo from '@/components/layout/Logo';
 import Button from '@/components/ui/Button';
 import DownloadButtons from '@/components/ui/DownloadButtons';
@@ -13,6 +14,7 @@ export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -22,33 +24,46 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const isActive = (path: string) => pathname === path;
+
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-white/90 backdrop-blur-xl shadow-soft py-3 border-b border-slate-200/60'
-            : 'bg-transparent py-5'
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
+          ? 'bg-white/90 backdrop-blur-xl shadow-soft py-3 border-b border-slate-200/60'
+          : 'bg-transparent py-5'
+          }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          <Logo size="md" />
+          <Logo size="sm" />
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
+            {/* Home Icon Only */}
+            <Link
+              href="/"
+              className={`flex items-center justify-center p-2.5 rounded-lg transition-all relative group ${isActive('/') ? 'text-primary bg-primary/5' : 'text-slate-700 hover:text-primary hover:bg-slate-50'
+                }`}
+              title="Home"
+            >
+              <Home className="w-5 h-5" />
+              <span className={`absolute bottom-0.5 left-2.5 right-2.5 h-0.5 bg-primary transition-transform origin-left ${isActive('/') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
+            </Link>
+
             {/* Product Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setActiveDropdown('product')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors">
+              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors relative group">
                 Product
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === 'product' ? 'rotate-180 text-primary' : 'text-slate-400'
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'product' ? 'rotate-180 text-primary' : 'text-slate-400'
+                    }`}
                 />
+                <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary transition-transform origin-left scale-x-0 group-hover:scale-x-100" />
               </button>
 
               {activeDropdown === 'product' && (
@@ -77,13 +92,13 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown('solutions')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors">
+              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors relative group">
                 Solutions
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === 'solutions' ? 'rotate-180 text-primary' : 'text-slate-400'
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'solutions' ? 'rotate-180 text-primary' : 'text-slate-400'
+                    }`}
                 />
+                <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary transition-transform origin-left scale-x-0 group-hover:scale-x-100" />
               </button>
 
               {activeDropdown === 'solutions' && (
@@ -106,26 +121,14 @@ export default function Navbar() {
               )}
             </div>
 
-            {/* Direct Links */}
-            <Link
-              href="/customers"
-              className="hidden px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors"
-            >
-              For Customers
-            </Link>
-
-            <Link
-              href="/providers"
-              className="hidden px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors"
-            >
-              For Providers
-            </Link>
-
             <Link
               href="/pricing"
-              className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors"
+              className={`px-3.5 py-2 text-sm font-semibold rounded-lg transition-all relative group ${isActive('/pricing') ? 'text-primary' : 'text-slate-700 hover:text-primary'
+                }`}
             >
               Pricing
+              <span className={`absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary transition-transform origin-left ${isActive('/pricing') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
             </Link>
 
             {/* Resources Dropdown */}
@@ -134,13 +137,13 @@ export default function Navbar() {
               onMouseEnter={() => setActiveDropdown('resources')}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors">
+              <button className="flex items-center gap-1 px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors relative group">
                 Resources
                 <ChevronDown
-                  className={`w-4 h-4 transition-transform duration-200 ${
-                    activeDropdown === 'resources' ? 'rotate-180 text-primary' : 'text-slate-400'
-                  }`}
+                  className={`w-4 h-4 transition-transform duration-200 ${activeDropdown === 'resources' ? 'rotate-180 text-primary' : 'text-slate-400'
+                    }`}
                 />
+                <span className="absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary transition-transform origin-left scale-x-0 group-hover:scale-x-100" />
               </button>
 
               {activeDropdown === 'resources' && (
@@ -165,14 +168,17 @@ export default function Navbar() {
 
             <Link
               href="/about"
-              className="px-3.5 py-2 text-sm font-semibold text-slate-700 hover:text-primary rounded-lg transition-colors"
+              className={`px-3.5 py-2 text-sm font-semibold rounded-lg transition-all relative group ${isActive('/about') ? 'text-primary' : 'text-slate-700 hover:text-primary'
+                }`}
             >
               About
+              <span className={`absolute bottom-0 left-3.5 right-3.5 h-0.5 bg-primary transition-transform origin-left ${isActive('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                }`} />
             </Link>
           </nav>
 
           {/* Right Action CTAs */}
-          <div className="hidden lg:flex items-center gap-3 flex-wrap">
+          <div className="hidden lg:flex items-center gap-2">
             <button
               className="p-2 text-slate-500 hover:text-primary transition-colors rounded-lg hover:bg-slate-100"
               aria-label="Language selector"
@@ -180,9 +186,7 @@ export default function Navbar() {
             >
               <Globe className="w-4 h-4" />
             </button>
-            <div className="flex gap-2 items-center">
-              <DownloadButtons size="sm" />
-            </div>
+            <DownloadButtons size="sm" />
           </div>
 
           {/* Mobile Menu Toggle Button */}

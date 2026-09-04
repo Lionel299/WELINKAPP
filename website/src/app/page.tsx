@@ -2,6 +2,7 @@ import HeroSection from '@/components/home/HeroSection';
 import TrustBar from '@/components/home/TrustBar';
 import ProblemSection from '@/components/home/ProblemSection';
 import SolutionSection from '@/components/home/SolutionSection';
+import HowItWorksSection from '@/components/home/HowItWorksSection';
 import FeaturesSection from '@/components/home/FeaturesSection';
 import MapSection from '@/components/home/MapSection';
 import SocialFeedSection from '@/components/home/SocialFeedSection';
@@ -16,16 +17,16 @@ export default function HomePage() {
       {/* 1. Hero Section */}
       <HeroSection />
 
-      {/* 2. Trust Bar & Key Stats */}
-      <TrustBar />
-
       {/* 3. The Problem We Solve */}
       <ProblemSection />
 
       {/* 4. The Solution: Unified Ecosystem */}
       <SolutionSection />
 
-      {/* 5. Core Features Grid */}
+      {/* 5. How It Works - Phone Mockups */}
+      <HowItWorksSection />
+
+      {/* 6. Core Features Grid */}
       <FeaturesSection />
 
       {/* 7. Interactive Map Showcase */}
@@ -48,3 +49,4 @@ export default function HomePage() {
     </>
   );
 }
+

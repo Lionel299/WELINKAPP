@@ -13,6 +13,7 @@ import {
   BarChart3,
   Target,
   Crown,
+  Receipt,
   Sparkles,
 } from 'lucide-react';
 import { PROVIDER_TOOLS } from '@/lib/constants';
@@ -29,6 +30,7 @@ const toolIcons: Record<string, any> = {
   BarChart3,
   Target,
   Crown,
+  Receipt,
 };
 
 export default function BusinessTools() {
@@ -37,7 +39,6 @@ export default function BusinessTools() {
       <Container>
         <ScrollReveal>
           <SectionHeading
-            tag="Integrated Suite"
             title="Everything you need to grow your service business."
             subtitle="WeLink replaces fragmented WhatsApp chats, paper receipt books, and guesswork with a single enterprise-grade app built for independent professionals."
           />
@@ -55,9 +56,6 @@ export default function BusinessTools() {
                     </div>
                     <h3 className="text-base font-bold text-slate-900 mb-1.5">{tool.title}</h3>
                     <p className="text-xs text-slate-600 leading-relaxed">{tool.description}</p>
-                  </div>
-                  <div className="mt-4 pt-3 border-t border-slate-100 flex items-center gap-1 text-[11px] font-semibold text-primary">
-                    <span>Built-in Tool</span>
                   </div>
                 </div>
               </ScrollReveal>

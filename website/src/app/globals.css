@@ -21,6 +21,7 @@
 
   body {
     @apply bg-background text-text-primary font-sans;
+    overflow-x: hidden;
   }
 
   ::selection {
@@ -31,6 +32,23 @@
   :focus-visible {
     @apply outline-2 outline-offset-2 outline-primary;
   }
+}
+
+/* ===========================
+   Progress Bar Animation
+   =========================== */
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-progress {
+  animation: progress 0.4s ease-out forwards;
 }
 
 /* ===========================
@@ -163,4 +181,19 @@
   .card-hover {
     @apply transition-all duration-300 hover:shadow-large hover:-translate-y-1;
   }
-}
+
+    .logo-red {
+      filter: brightness(0) saturate(100%) invert(19%) sepia(93%) saturate(4428%) hue-rotate(348deg) brightness(86%) contrast(91%);
+    }
+
+    .feature-number::after {
+      content: '';
+      position: absolute;
+      right: 0.45rem;
+      bottom: 0.45rem;
+      width: 0.35rem;
+      height: 0.35rem;
+      border-radius: 9999px;
+      background: #2563eb;
+    }
+  }

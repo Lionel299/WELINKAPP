@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
+import ProgressBar from '@/components/ui/ProgressBar';
 
 export const metadata: Metadata = {
   title: 'WeLink — Everything you need. Right around you.',
@@ -19,6 +20,9 @@ export const metadata: Metadata = {
     'service marketplace',
   ],
   authors: [{ name: 'WeLink Technologies Inc.' }],
+  icons: {
+    icon: '/logo-size.png',
+  },
   openGraph: {
     title: 'WeLink — The Modern Marketplace for Local Services',
     description:
@@ -46,6 +50,7 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-text-primary antialiased flex flex-col min-h-screen selection:bg-primary/20 selection:text-primary-dark">
+        <ProgressBar />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />
@@ -53,3 +58,4 @@ export default function RootLayout({
     </html>
   );
 }
+
